@@ -1,0 +1,14 @@
+Goal: Make system production-like.
+
+Tasks:
+
+Detection threshold alerts
+Missing data alerts
+Health monitoring
+Logging
+Docker deployment
+Documentation
+
+Deliverable
+
+End-to-end deployed system

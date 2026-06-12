@@ -1,0 +1,11 @@
+Tasks:
+
+Create detection summaries
+Count defects/features
+Store results in SQLite
+Create local logs
+Handle failed detections
+
+Deliverable
+
+Structured detection database

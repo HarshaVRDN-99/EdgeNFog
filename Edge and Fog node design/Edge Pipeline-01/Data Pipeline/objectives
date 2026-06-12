@@ -1,0 +1,9 @@
+Goal:
+
+Collect the data from the drone
+Store the data in the Edge laptop as a Database
+Derive important analytics and trends from this data
+Make a dashboard to display the statistics and charts
+Send the data to the FOG node
+
+Output: Data collection pipeline

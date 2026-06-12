@@ -1,0 +1,15 @@
+Fog Node Data Aggregation
+
+Goal: Receive data from multiple edge nodes.
+
+Tasks:
+
+Build API endpoint
+Receive edge analytics
+Validate incoming payloads
+Merge records
+Store centralized database
+
+Deliverable:
+
+Multiple edge devices feeding one fog node

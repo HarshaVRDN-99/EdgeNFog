@@ -1,0 +1,13 @@
+Goal: Detect defects/features at the FOG.
+
+Tasks:
+
+Load trained model
+Run inference on incoming images
+Extract detections
+Calculate confidence scores
+Save inference outputs
+
+Deliverable
+
+Image → Detection pipeline working locally
