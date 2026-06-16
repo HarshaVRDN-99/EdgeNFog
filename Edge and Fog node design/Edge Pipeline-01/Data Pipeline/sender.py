@@ -33,7 +33,8 @@ async def count_sheets(file: UploadFile = File(...), visualize: bool = False):
         "sheet_count": count,
         "tilt": tilt,
         "density": density.tolist() if hasattr(density, "tolist") else density,
-        
+        "estimation_method": "ayan's edge detector",
+        "drone_id": "drone_01"
     }
 
     # Logger — mandatory, must complete
@@ -60,4 +61,3 @@ curl -X POST -F "file=@raw/nowrap_images/image1.jpeg" http://localhost:8000/coun
 curl -X POST -F "file=@raw/nowrap_images/image1.jpeg" "http://localhost:8000/count_sheets/?visualize=true"
 '''
 
-"estimation_method": "ayan's edge detector"
