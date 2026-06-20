@@ -43,7 +43,7 @@ async def receive_detection(request: Request):
 
         insert_detected_features(
             filename, received_timestamp, sheet_count,
-            tilt, density, estimation_method
+            tilt, density, estimation_method, drone_id
         )
 
         print(f"[detection] {drone_id} | {filename} | count={sheet_count} | tilt={tilt}")

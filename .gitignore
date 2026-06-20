@@ -1,0 +1,40 @@
+# ── Python ──────────────────────────────────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+
+# ── Databases (runtime data, never commit) ──────────────────────────────────
+*.db
+*.sqlite
+*.sqlite3
+Database.db
+Image_Database.db
+
+# ── Captured / uploaded images (runtime data, never commit) ────────────────
+images/raw/
+images/processed/
+**/images/raw/
+**/images/processed/
+/tmp/edge-detection/
+
+# ── Logs ─────────────────────────────────────────────────────────────────────
+*.log
+logs/
+
+# ── IDE ──────────────────────────────────────────────────────────────────────
+.idea/
+.vscode/
+*.iml
+
+# ── OS ───────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── Env / secrets ────────────────────────────────────────────────────────────
+.env
+*.env
+!.env-example

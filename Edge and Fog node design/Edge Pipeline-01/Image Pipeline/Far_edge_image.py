@@ -8,12 +8,13 @@ import numpy as np
 # =========================
 # CONFIG
 # =========================
-API_URL = "http://localhost:8000/count_sheets/?visualize=false"
-SEND_EVERY_N_FRAMES = 1
-SAVE_EVERY_N_FRAMES = 10
-JPEG_QUALITY = 95
-SAVE_DIR = "/tmp/edge-detection"
-EDGE_IMAGE_URL = "http://10.149.55.87:8003/upload_image"
+API_URL              = os.getenv("API_URL", "http://localhost:8000/count_sheets/?visualize=false")
+EDGE_IMAGE_URL        = os.getenv("EDGE_IMAGE_URL", "http://localhost:8003/upload_image")
+DRONE_ID              = os.getenv("DRONE_ID", "drone_01")
+SEND_EVERY_N_FRAMES   = 1
+SAVE_EVERY_N_FRAMES   = 10
+JPEG_QUALITY          = 95
+SAVE_DIR              = "/tmp/edge-detection"
 
 # Create save directory
 os.makedirs(SAVE_DIR, exist_ok=True)

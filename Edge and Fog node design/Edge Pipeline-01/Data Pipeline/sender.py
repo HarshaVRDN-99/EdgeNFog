@@ -3,10 +3,12 @@ from fastapi.responses import JSONResponse
 import numpy as np
 import cv2
 import httpx
+import os
 from sheet_counter.processing import SheetStackProcessor
 
-EDGE_URL= "http://10.149.55.87:8003/receive_detection"
-LOGGER_URL = "http://logger-server:8001/log_sheets_data/"
+EDGE_URL   = os.getenv("EDGE_URL", "http://localhost:8003/receive_detection")
+LOGGER_URL = os.getenv("LOGGER_URL", "http://localhost:8001/log_sheets_data/")
+DRONE_ID   = os.getenv("DRONE_ID", "drone_01")
 MAX_DIM = 1280
 app = FastAPI()
 processor = SheetStackProcessor()
@@ -34,7 +36,7 @@ async def count_sheets(file: UploadFile = File(...), visualize: bool = False):
         "tilt": tilt,
         "density": density.tolist() if hasattr(density, "tolist") else density,
         "estimation_method": "ayan's edge detector",
-        "drone_id": "drone_01"
+        "drone_id": DRONE_ID
     }
 
     # Logger — mandatory, must complete
@@ -56,8 +58,13 @@ async def count_sheets(file: UploadFile = File(...), visualize: bool = False):
 
 
 '''
-uvicorn api.server_main:app --reload
-curl -X POST -F "file=@raw/nowrap_images/image1.jpeg" http://localhost:8000/count_sheets/
-curl -X POST -F "file=@raw/nowrap_images/image1.jpeg" "http://localhost:8000/count_sheets/?visualize=true"
+Run (set EDGE_URL to your actual edge laptop's address):
+    EDGE_URL=http://<edge-ip>:8003/receive_detection \
+    DRONE_ID=drone_01 \
+    uvicorn api.server_main:app --reload
+
+Test:
+    curl -X POST -F "file=@raw/nowrap_images/image1.jpeg" http://localhost:8000/count_sheets/
+    curl -X POST -F "file=@raw/nowrap_images/image1.jpeg" "http://localhost:8000/count_sheets/?visualize=true"
 '''
 
